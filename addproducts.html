@@ -50,10 +50,28 @@
       <input type="password" class="form-control" id="pwd" placeholder="Price" name="Price">
     </div>
     
-    <button type="submit" class="btn btn-default">Add</button>
+    <button onclick="add_new_product()" type="submit" class="btn btn-default">Add</button>
   </form>
 </div>
 
+<script>
+  function add_new_product () {
+    var input_value = document.getElementById("product").value;
+    var input_value = document.getElementById("price").value;
+    if (input_value =="") {
+      document.getElementById("product"),innerText= "field product is required";
+    
+    } else {
+      add_new_product.push(input_value);
+
+
+    }
+   console.log(add_new_product);
+    
+
+    
+  }
+</script>
 </body>
 
 </html>
