@@ -56,17 +56,17 @@
 
 <script>
   function add_new_product () {
-    var input_value = document.getElementById("product").value;
-    var input_value = document.getElementById("price").value;
+    var input_value_product = document.getElementById("product").value;
+    var input_value_price = document.getElementById("price").value;
     if (input_value =="") {
-      document.getElementById("product"),innerText= "field product is required";
+      document.getElementById("product").innerText= "field product is required";
     
     } else {
       add_new_product.push(input_value);
 
 
     }
-   console.log(add_new_product);
+   console.log("add_new_product");
     
 
     
