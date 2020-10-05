@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -43,35 +43,41 @@
   <form class="form-inline" action="/action_page.php">
     <div class="form-group">
       
-      <input type="text" class="form-control" id="text" placeholder="Add product" name="product">
+      <input type="text" class="form-control" id="product" placeholder="Add product" name="product">
+      
     </div>
+    <small class="text-danger" id="note_required"> </small>
     <div class="form-group">
       
-      <input type="password" class="form-control" id="pwd" placeholder="Price" name="Price">
+      <input type="number" class="form-control" id="price" placeholder="Price" name="Price">
     </div>
     
-    <button onclick="add_new_product()" type="button" class="btn btn-default">Add</button>
+    <button onclick="add_new_product()" type="button" class="btn btn-success">Add</button>
   </form>
 </div>
 
 <script>
+  var add_new_product_array = [];
   function add_new_product () {
     var input_value_product = document.getElementById("product").value;
     var input_value_price = document.getElementById("price").value;
-    if (input_value =="") {
-      document.getElementById("product").innerText= "field product is required";
+    if (input_value_product =="") {
+      document.getElementById("note_required").innerText= "field product is required";
     
     } else {
-      add_new_product.push(input_value);
+      document.getElementById("note_required").innerText= "";
+      add_new_product_array.push(
+        {product:input_value_product,
+        price:input_value_price});
+      document.getElementById("product").value= "";
+      document.getElementById("price").value= "";
+
 
 
     }
-   console.log("add_new_product");
+   console.log(add_new_product_array);
 
-  function array_new_products () {
-    var product_name = "apple";
-    var product_price = '2,5' ; 
-  }  
+  
 
     
   }
